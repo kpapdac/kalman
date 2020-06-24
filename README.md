@@ -12,7 +12,7 @@ The theory of kalman filters can be summarised as follows.
 
 At each time t system and observations are defined from the equations
 
-Observation: Yt= μt + νt, νt ∼ N[0, Vt]
+Observation: Yt= μt + νt, νt ∼ N[0, V_t]
 
 System: μt= μt−1 + ωt, ωt ∼ N[0, Wt]
 
