@@ -1,4 +1,3 @@
-# kalman
 # Summary code on kalman regression model
 
 The package has been build upon pydlm https://pydlm.github.io/index.html#, generalizing it to multivariate dlm as well as expanding its capability into managing complicated models.
