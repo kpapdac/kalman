@@ -7,3 +7,27 @@ The main idea is to represent the problem having a system equation and an observ
 Using the discount feature the modeler can control how much the current observation will influence the next step prediction.
 
 The multivariate dlm cam calculate multiple observation equations, all sharing the same system variance.
+
+The theory of kalman filters can be summarised as follows.
+
+At each time t system and observations are defined from the equations
+
+Observation: Yt= μt + νt, νt ∼ N[0, Vt]
+
+System: μt= μt−1 + ωt, ωt ∼ N[0, Wt]
+
+Initial information: (μ0 |D0) ∼ N[m0, C0]
+
+The next step prediction is given by the following set of recursive relationships
+
+(a) Posterior for μt−1 : (μt−1 | Dt−1) ∼ N[mt−1, Ct−1]
+
+(b) Prior for μt : (μt | Dt−1) ∼ N[mt−1, Rt],
+where Rt = Ct−1 + Wt.
+
+(c) 1-step forecast: (Yt | Dt−1) ∼ N[ft, Qt],
+where ft = mt−1 and Qt = Rt + Vt.
+
+(d) Posterior for μt : (μt | Dt) ∼ N[mt, Ct],
+with mt = mt−1 + Atet and Ct = AtVt,
+where At = Rt /Qt , and et = Yt − ft.
